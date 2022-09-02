@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css"> <!--Import Google font-->
+    <style>
+        .image1{
+            width: 300px;
+            border-color: blue;
+            border-width: 2px;
+            border-style: solid;
+        }
+        h1{
+            font-family: Lobster, sans-serif;
+        }
+        .font-sans{
+            font-family: sans-serif;
+        }
+    </style>
+    <title>Assignment4</title>
+    <h1>Javascript Assignment4</h1><br/>
+</head>
+<body>
+    <script>
+        function noofSticks(num){
+            let stick = 6;
+            if (num<0){
+                return (document.getElementById('output1').value='Invalid input');
+            }else if(num==0){
+                stick = 0;
+            }else if (num>1){
+                while(num>=2){
+                    stick+=5;
+                    num-=1
+                }
+            }
+            return document.getElementById('output1').value=stick;
+        }
+    </script>
+    <img class="image1" src='Assignment4.JPG'/>
+    <p class="font-sans" >Above image shows huts made of match-sticks.<br/>Enter the no of huts, to find out no of match-sticks required to make those huts.</p>
+    <br/>
+    <input type="number" id="input1" placeholder="Enter no of Huts" />
+    <button onclick="noofSticks(document.getElementById('input1').value)" >Result</button><br/>
+    <output id="output1">No of sticks required</output>
+</body>
+</html>
